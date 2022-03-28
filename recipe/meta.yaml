@@ -44,7 +44,7 @@ requirements:
     # Needed to unpack the source tarball
     - m2w64-xz  # [win]
     # "compiling .pyc files" fails without this
-    - python >3
+    - python =3.9
     # Building with ninja on windows for parallel builds
     - ninja  # [win]
     - make   # [unix]
@@ -290,7 +290,7 @@ outputs:
     requirements:
       build:
         # "compiling .pyc files" fails without this
-        - python >3
+        - python =3.9
         - {{ compiler('cxx') }}
         - cmake >=3.4.3
         - ninja  # [win]
@@ -326,9 +326,9 @@ outputs:
     script: build_python_bindings.sh
     requirements:
       host:
-        - python
+        - python =3.9
       run:
-        - python
+        - python =3.9
         - libclang =={{ version }}
     test:
       requires:
